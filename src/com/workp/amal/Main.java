@@ -1,13 +1,24 @@
 package com.workp.amal;
 
-import com.workp.amal.garage.Car;
-import java.util.List;
+import com.workp.amal.garage.Bike;
+import com.workp.amal.garage.Vehicle;
+import com.workp.amal.homeshop.*;
+
 public class Main {
 
     public static void main(String[] args) {
-	Car car = new Car ("Clio III",
-            "Renault Clio 3 Gris année 2005", "Renault", 2005, "Gris",
-    225, new int[]{4832, 1720, 1497}, 1240, 5, 5, "motor name",
-            List.of(new String[]{"vitres éléctriques", "GPS"}));
+        Product cafe = new Product("Philips HD7866/61", "Philips SENSEO Quadrante, Noir - 1 ou 2 tasses", 79.99);
+        Television tv = new Television("TV Samsung UE49MU6292", "Smart TV LED incurvée 49\"", 599, 49, "LED");
+        Fridge fridge = new Fridge("BEKO TSE 1042 F", "Réfrigérateur BEKO 130L - Classe A+ - blanc", 189, 130, false);
+
+        Customer customer = new Customer("Juste Leblanc", "19 rue Germain Pilon, Paris");
+
+        Bill bill = new Bill(customer);
+        bill.addProduct(cafe, 1);
+        bill.addProduct(tv, 1);
+        bill.addProduct(fridge, 1);
+
+        Vehicle v = new Bike();
     }
 }
+

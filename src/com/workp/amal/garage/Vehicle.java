@@ -1,8 +1,8 @@
 package com.workp.amal.garage;
 
-public class Vehicle {
+public abstract class Vehicle {
 
-    private String modelName;
+    protected String modelName;
     private String description;
     private String manufacturer;
     private int year;
@@ -21,12 +21,15 @@ public class Vehicle {
         this.dimensions = dimensions;
         this.weight = weight;
     }
-    public void start (){
-        System.out.println("Je suis " + modelName + " et je démarre");
+
+    public Vehicle() {
+
     }
-    public void stop(){
-        System.out.println("Je suis " + modelName + " et je m'arrête");
-    }
+
+    public abstract void start ();
+
+    public abstract void stop();
+
 
     public String getModelName() {
         return modelName;
