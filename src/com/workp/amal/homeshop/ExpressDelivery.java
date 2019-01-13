@@ -11,8 +11,13 @@ public class ExpressDelivery implements Delivery{
     @Override
     public double getPrice() {
         if(city.equals("Paris"))
-            return 6.99;
+             return 6.99;
         else
             return 9.99;
+    }
+
+    @Override
+    public String getInfo() {
+        return "livraison à domicile express" + getPrice();
     }
 }
